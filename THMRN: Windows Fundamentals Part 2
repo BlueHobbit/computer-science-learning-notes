@@ -1,3 +1,42 @@
 TryHackMe Room Notes: Windows Fundamentals Part 2
 
 - Already part way through with notes in my project workbook. 
+
+What's the difference between the different memory dump/kernel dump options in the event of a system failure when looking at advanced system settings (start up and recovery)?
+
+- Complete, kernel, and small all pertain to specific sizing of the memory dump created when the system stops unexpectedly. Complete requires a significant pagefile to be accessible and contains a full snapshot of system memory at the time of the failure. Kernel only dumps the memory in the kernel to the file and requires a noticeably smaller page file for storing the dump, this seems important for dealing with kernel specific issues that are unrelated to the functioning of the rest of the memory. A small dump is quite literally as small as possible only dumping the memory for the instruction on a thread where the failure has occurred. This gives a fairly isolated view of the issue which limits analysis, however a system that lacks significant storage space might initiate the usage of this option since a larger page file can't be created without issue or impairing functionality. 
+- https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/memory-dump-file-options
+- https://learn.microsoft.com/en-gb/windows-hardware/drivers/debugger/forcing-a-system-crash-from-the-keyboard
+The two links above show relevant windows documentation for the memory dump file options and the second expressses how to initiate a system crash from the keyboard which I feel is interesting given the possible malware uses of such as shortcut. If possible it would seem sensible to disable this shortcut but I need to read the article further to have an idea of how to do this. 
+I've read more into the second article, while a malware tool is almost certainly possible it requires registry access in the first place which is disabled on any even casually hardened windows system except for the administrator account or accounts requiring those permissions generally. Privilege escalation is probably required automatically to make the hypothetical malware usable. 
+
+- The automatic memory dump option has most of the same information as the kernel option however in conjunction with the automatic page sizing it enables a larger page size to be created in order to accomodate the relevant information. This is temporary lasting for 4 weeks before returning back to the regular size and is an automatic process triggered by the failure if the regular page file is too small.
+
+- What is a page file? (I already know but useful to remember)
+--  A page file is virtual memory created on a drive of a windows system. 
+--  The use of a page file in this context is likely to be as temporary storage for an image of the relevant memory areas for the back up before it is actually backed onto the drive itself permanently (or at least until another error occurs or another memory dump is required for another reason.)
+
+What is windows server backup?
+
+- It's a native backup utility specifically made for backing up windows servers. I don't remember working with this for my WindowsServer 2016 project, it was possible just too far outside of the scope though back ups would be an important part of a recovery strategy linking back to hardening the server overall.
+
+I'm not happy with the degree of depth the room goes into with regards to the advanced systems settings or the different options for the boot tab of msconfig. The room doesn't cover for example the functionality of no GUI as a boot option and the usefulness that option can have as a diagnostic tool.
+
+I need to do some research into VSS and volume level back ups plus back ups in general. 
+
+Moving onto computer management, the event viewer is an important tool for troubleshooting auditing measures as well as ensuring they work especially in terms of those auditing features which are native to Windows. 
+- The different types of event etc. can be viewed at: https://learn.microsoft.com/en-us/windows/win32/EventLog/about-event-logging with more resources being available via some extra exploration. 
+
+¬ This is an event logs room specifically for windows would definitely be good to work on. 
+https://tryhackme.com/room/windowseventlogs -- I'm going to do this once I get home as this laptop will struggle with the remmina + Kali vm's both being connected I suspect. 
+
+It would be interesting to research more advanced uses of disk management in Windows.
+
+Is there a purpose to changing or assigning a new letter to a drive? Specific use cases?
+
+What is WMI control?
+
+What does enabling routing and remote access in compmgmt do?
+
+¬ Hardware resources section of msinfo32 (not for average computer user -> "that sounds like a challenge and we love a challenge lol")
+https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/hardware-resources - Likely worth reading in part because it has relevance to registry editing from what I can see initially. 
