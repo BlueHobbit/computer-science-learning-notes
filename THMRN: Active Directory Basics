@@ -1,0 +1,16 @@
+I've already used active directory when I was completing my cybersecurity project setting up and hardening a Windows Server 2016 VM. 
+
+How does the active directory authentication process work?
+
+What's the difference between security groups on Windows and normal user groups on Windows?
+
+I could really do with finding some sort of memory retrieval practice software or creating my own flashcard style software. Quizlet does this but charges for a premium version - I've given it a go just now and I'm honestly quite impressed so far - it's definitely what I'm after arguably. 
+
+Default security group list plus extra explanation --> https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups
+
+What are security principals? (I can kind of guess but it's better to have a formal definition to understand in the context)
+  -  https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-principals
+  -  The security principals definition seems to be an explicit idea of AD with them representing user accounts, computer accounts, and security groups. 
+  -  By this definition security groups are groups that user and computer accounts can be added to with specific resource or privilege allocations being given to them based on that group. 
+  -  There also appears to be a layering of the security group mechanism to allow for inheritance of privilges and resource access from what is essentially a parent security group?
+
