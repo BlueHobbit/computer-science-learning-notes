@@ -14,3 +14,30 @@ What are security principals? (I can kind of guess but it's better to have a for
   -  By this definition security groups are groups that user and computer accounts can be added to with specific resource or privilege allocations being given to them based on that group. 
   -  There also appears to be a layering of the security group mechanism to allow for inheritance of privilges and resource access from what is essentially a parent security group?
 
+Being able to reset passwords from the active directory users and computers repository is definitely helpful.
+
+What do the additional containers that have shown up pertain to when I enable advanced features view?
+
+What's the formal definition of a container - it seems autological but somehow perhaps unnecessarily technical?
+
+I think I interacted with GPO's during my cybersecurity project but I'm unsure whether I actually applied the policies created to any OU's which is weird because it would have been a clear part of the set up really. 
+  -  This may have been some other form of group policy set up that I ended up dealing with but I'm not sure yet what that could have been.
+
+Are there CLI alternatives for opening up group policy manager and the active directory respository?
+
+What's the difference between domain and enterprise admins?
+
+Okay yeah, I've definitely interacted with group policy management in some way before as the options I'm seeing when it comes to editing the GPO's are ones I've definitely seen and modified before as part of setting up and hardening an MS Server 2016 VM.
+
+Did I just access the group policy management editor directly in some way, is that possible?
+
+I also remember the explain section for the different policy parts which is really helpful as always.
+
+What is a network share in the context of SYSVOL?
+  -  It's just a regular packet share but specifically used in the context of sharing the GPO's as far as I can tell.
+  -  I remember setting up a network share for my networking assignment were we had to simulate a network with CISCO packet tracer and then with a virtual machine to demonstrate the ability to do other parts of it, specifically creating a shared network folder and then applying NTFS permissions to it from what I remember. 
+  -  ^ I think I used powershell for it??
+
+gpupdate /force <-- Forces group policies to be updated immediately rather than at their natural pace. The group policy update normally happens in a 90 minute cycle based on my research but I'm still not sure why this is.
+  -  Okay so there's more to it than what I had initially read. The group policy doesn't wait 90 mins to be updated rather that 90 minute interval plus up to an extra 30 mins is used to handle all of the requests that lead to the GPO change being registered by computers while they are still running moreover it commits to that timeframe for any computers that are logged into during the time as the new policies are instantly applied to them (at least in theory.)
+
