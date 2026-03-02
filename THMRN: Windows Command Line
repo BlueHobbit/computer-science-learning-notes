@@ -1,0 +1,15 @@
+I've already gotten started a bit here, first part was SSHing into a windows server by the looks of it. 
+
+set --> Grabs all of the current enviroment variables on the system + can also be used to create, modify, and delete environmental variables. See: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1
+
+ver --> displays the OS version
+
+systeminfo --> similar to the msinfo32 executable but display the system info it summarises as text rather than in a GUI. See: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo
+
+more --> displays one page of output at a time - can be used with commands like systeminfo and driverquery to minimize output to one page. 
+
+Using [Space] is the best way to navigate down the list created by more
+
+It's worth noting as well that | works in windows cmd for piping in the same way it works for Linux from what I can see so far. 
+Is there a difference between | syntactically in Winodws CMD and Linux CLI?
+
