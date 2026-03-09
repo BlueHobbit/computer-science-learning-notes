@@ -1,5 +1,8 @@
 # Summary
-
+-  The room covers a variety of PowerShell commands, and explains the reasoning behind and origins of PowerShell as an application. 
+-  The commands I remember and what they do:
+  -  get-command displays a list of every available command on the powershell including ones from external modules that have been installed and imported to the session. You can add filters to search for specific commands by type and by name amongst other things. 
+  -  get-alias displays the alias's for various powershell commands which are primarily their command line prompt equivalents. For example, type is the alias for Get-Content which essentially functions in the same way. 
 
 
 # Notes
