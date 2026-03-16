@@ -1,0 +1,12 @@
+# Summary
+
+# Notes
+- Wireshark is one of the best packet analysis tools that seems to be around. I know a lot of forensics and troubleshooting uses it or something similar. 
+  - I remember one of the guys at GR saying he used it and found out his hoover was talking to a server in China which was quite funny.
+
+- README for creating wireshark packet dissectors --> https://github.com/boundary/wireshark/blob/master/doc/README.dissector
+
+- Goddamit, was entering one of the flags and realized it was in American date format which is why it wasn't working. 
+
+- Link to wireshark docs/website --> https://www.wireshark.org/docs/
+
