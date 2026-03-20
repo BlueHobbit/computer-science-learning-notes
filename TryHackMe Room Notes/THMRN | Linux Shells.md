@@ -3,7 +3,7 @@
 # Notes
 - I've done plenty of work with linux before so I'm going to try and wizz through this fairly quickly.
 
-- What's the difference between the differnt shells listed in /etc/shells?
+- What's the difference between the different shells listed in /etc/shells?
 
 - If zsh is more modern than bash why hasn't it become the default already?
 
